@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+/* Root Variables for Reusability and Theming */
+:root {
+  --primary-color: #007bff;
+  --primary-hover-color: #0062cc;
+  --background-color: #f8f9fa;
+  --form-background: #ffffff;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  --heading-color: #333333;
+  --secondary-color: #6c757d;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Universal Reset for Box Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Full-Height Container Centering */
+.login-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: column; /* Ensures the heading and form are vertically aligned */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  padding: 20px; /* For better spacing on smaller screens */
 }
 
-.App-link {
-  color: #61dafb;
+.signup-container {
+  display: flex;
+  flex-direction: column; /* Ensures the heading and form are vertically aligned */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  padding: 20px; /* For better spacing on smaller screens */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Heading Styling */
+.login-container h2 {
+  font-size: 2rem; /* Large and bold */
+  color: var(--heading-color);
+  margin-bottom: 20px; /* Space below the heading */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.5px; /* Subtle spacing for readability */
+}
+
+/* Heading Styling */
+.signup-container h2 {
+  font-size: 2rem; /* Large and bold */
+  color: var(--heading-color);
+  margin-bottom: 20px; /* Space below the heading */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.5px; /* Subtle spacing for readability */
+}
+
+/* Form Styling */
+.login-form {
+  background-color: var(--form-background);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 400px;
+  width: 100%; /* Fully responsive form width */
+}
+
+/* Button Styling */
+.login-button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%; /* Full-width for better UX */
+}
+
+/* Hover Effect */
+.login-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Button Focus State for Accessibility */
+.login-button:focus {
+  outline: 3px solid rgba(0, 123, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Form Elements Spacing */
+.login-form input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus State for Inputs */
+.login-form input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }

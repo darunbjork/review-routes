@@ -1,10 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../App.css"
 
 const Login = () => {
+
+  const [ username, setUsername ] = useState('');
+  const [ password, setPassword ] = useState('');
+  const navigate = useNavigate();
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("Login Username:", username);
+    console.log("Login Password:", password);
+
+    navigate("/")
+    setUsername('');
+    setPassword('');
+  };
   return (
-    <div>
+    <div  className="login-container">
       <h2>Login Page</h2>
-      <p>Enter your credentials below to login.</p>
+     <form onSubmit={handleSubmit} className="login-form">
+      <label htmlFor="username">
+        Username:
+        <input 
+        type="text" 
+        placeholder="Enter Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        required
+        />
+      </label>
+      <br />
+      <label htmlFor="password">
+        Password:
+        <input 
+        type="password" 
+        placeholder="Enter Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        required
+        />
+      </label>
+      <br />
+      <button type="submit" className="login-button">Login</button>
+     </form>
     </div>
   )
 };
