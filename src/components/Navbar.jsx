@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 const Navbar = ({ isAuthenticated, logout }) => {
+
+  const handleLogout = () => {
+    if(window.confirm("Are you sure you want to logout?")) {
+      logout();
+    }
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-brand">
@@ -12,7 +19,7 @@ const Navbar = ({ isAuthenticated, logout }) => {
         {isAuthenticated ? (
           <>
             <Link to="/" className="navbar-button">Home</Link>
-            <button onClick={logout} className="navbar-button logout-button">Logout</button>
+            <button onClick={handleLogout} className="navbar-button logout-button">Logout</button>
           </>
         ) : (
           <>
