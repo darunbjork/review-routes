@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css"
 
-const Login = () => {
+const Login = ({login}) => {
 
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
@@ -16,6 +16,7 @@ const Login = () => {
     console.log("Login Password:", password);
 
     navigate("/")
+    login();
     setUsername('');
     setPassword('');
   };
