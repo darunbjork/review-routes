@@ -111,8 +111,6 @@
   border-color: var(--primary-color);
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
-
-
 /* Root Variables for Theming */
 :root {
   --navbar-bg: #343a40;
@@ -204,3 +202,148 @@
     gap: 10px;
   }
 }
+
+
+/* Root Variables for Theming */
+:root {
+  --primary-color: #007bff;
+  --primary-hover-color: #0056b3;
+  --danger-color: #dc3545;
+  --background-color: #f8f9fa;
+  --form-background: #ffffff;
+  --text-color: #333333;
+  --border-color: #ced4da;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --transition: 0.3s ease;
+}
+
+/* Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Profile Component Styles */
+.profile-container {
+  background-color: var(--form-background);
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.profile-container h2 {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+/* Form Labels */
+.profile-container label {
+  display: block;
+  font-weight: bold;
+  margin: 15px 0 5px;
+  color: var(--text-color);
+}
+
+/* Input Fields */
+.profile-container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: border-color var(--transition);
+}
+
+.profile-container input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+  outline: none;
+}
+
+.profile-container input[disabled] {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Buttons */
+.profile-container button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.profile-container button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+}
+
+.profile-container button:disabled {
+  background-color: var(--border-color);
+  cursor: not-allowed;
+}
+/* Movies Page Styles */
+.movies-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.movie-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .movie-card {
+    max-width: 90%;
+  }
+}
+
+

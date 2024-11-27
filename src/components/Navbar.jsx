@@ -16,12 +16,14 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <Link to="/" className="navbar-logo">MyApp</Link>
+        <Link to="" className="navbar-logo">MovieHub</Link>
       </div>
       <div className="navbar-actions">
         {isAuthenticated ? (
           <>
             <Link to="/" className="navbar-button">Home</Link>
+            <Link to="/movies" className="navbar-button">Movies</Link>
+            <Link to="/profile" className="navbar-button">Profile</Link>
             <button onClick={handleLogout} className="navbar-button logout-button">Logout</button>
           </>
         ) : (
