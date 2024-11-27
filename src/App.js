@@ -5,11 +5,21 @@ import Home from "./components/Home";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 function App() {
-  const [ isAuthenticated, setIsAuthenticated ] = useState(false);
 
-  const login = () => setIsAuthenticated(true);
+  
+  const [ isAuthenticated, setIsAuthenticated ] = useState(() => {
+    return localStorage.getItem("isAuthenticated") === "true"; //checks if the stored value is "true"       (local storage only stores strings "that's why we put in " " ).
+  });
 
-  const logout = () => setIsAuthenticated(false);
+  const login = () => {
+    setIsAuthenticated(true);
+    localStorage.setItem("isAuthenticated", "true")
+  }
+
+  const logout = () => {
+    setIsAuthenticated(false);
+    localStorage.removeItem("isAuthenticated");
+  }
 
   return (
     <Router>
