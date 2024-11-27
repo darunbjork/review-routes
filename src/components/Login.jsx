@@ -7,6 +7,7 @@ const Login = () => {
 
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
+  const [error, setError ] = useState('');
   const {login} = useContext(AuthContext)
   const navigate = useNavigate();
 
@@ -14,14 +15,25 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if(username.trim() === '' || password.trim() === '') {
+      setError("Username and Password are required");
+      return;
+    }
+
+    if(password.length < 6 ) {
+      setError("Password must be at least 6 cgaracters long.");
+      return;
+    }
+
     console.log("Login Username:", username);
     console.log("Login Password:", password);
 
-    navigate("/")
+    setError('');
+    navigate("/");
     login();
-    setUsername('');
-    setPassword('');
   };
+
+
   return (
     <div  className="login-container">
       <h2>Login Page</h2>
@@ -47,6 +59,8 @@ const Login = () => {
         required
         />
       </label>
+      <br />
+      {error && <p style={{color: 'red'}}>{error}</p>}
       <br />
       <button type="submit" className="login-button">Login</button>
      </form>
