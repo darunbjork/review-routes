@@ -255,74 +255,123 @@
   }
 }
 
-/* Save and Edit Buttons Styling */
-.profile-container button {
-  background-color: var(--primary-color); /* Default color */
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: var(--border-radius); /* Smooth corners */
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  margin-top: 15px;
-  transition: background-color var(--transition), transform var(--transition);
-}
-
-/* Hover Effect */
-.profile-container button:hover {
-  background-color: var(--primary-hover-color); /* Slightly darker on hover */
-  transform: translateY(-2px); /* Subtle lift effect */
-}
-
-/* Focus State for Accessibility */
-.profile-container button:focus {
-  outline: 3px solid rgba(0, 123, 255, 0.5); /* Blue outline for focus */
-  outline-offset: 2px;
-}
-
-/* Disabled State for Save Button */
-.profile-container button:disabled {
-  background-color: var(--border-color); /* Grayed out */
-  cursor: not-allowed;
-  transform: none; /* No lift effect when disabled */
-}
-
-
 /* Profile Container */
 .profile-container {
-  background-color: var(--form-background);
+  background-color: #ffffff; /* Clean white background */
   max-width: 600px;
   margin: 50px auto;
-  padding: 30px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  position: relative; /* Ensure it stays separate from the navbar dropdown */
-  z-index: 10; /* Lower z-index to avoid overlapping with the navbar */
+  padding: 30px 40px; /* Adjusted padding for balance */
+  border-radius: 12px; /* Smooth rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Profile Heading */
 .profile-container h2 {
   text-align: center;
-  color: var(--text-color);
-  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333; /* Darker text for readability */
+  margin-bottom: 30px;
+  font-family: 'Arial', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* Highlight Line Below Heading */
+.profile-container h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background-color: #007bff; /* Accent color */
+  margin: 10px auto 0;
+  border-radius: 2px;
 }
 
 /* Input Fields */
-.profile-container input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
+.profile-container label {
+  display: block;
   font-size: 1rem;
-  color: var(--text-color);
-  transition: border-color var(--transition);
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
 }
 
+.profile-container input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus State */
 .profile-container input:focus {
-  border-color: var(--primary-color);
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
   outline: none;
 }
+
+/* Disabled Input Styling */
+.profile-container input:disabled {
+  background-color: #f9f9f9; /* Light gray for disabled state */
+  cursor: not-allowed;
+  opacity: 0.8; /* Subtle difference */
+}
+
+/* Buttons */
+.profile-container button {
+  display: block;
+  width: 100%; /* Full-width buttons */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover and Focus Effects for Buttons */
+.profile-container button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.profile-container button:focus {
+  outline: 3px solid rgba(0, 123, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* Disabled Button */
+.profile-container button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .profile-container h2 {
+    font-size: 1.8rem; /* Slightly smaller font for smaller screens */
+  }
+
+  .profile-container button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+
 /* Movies Page Styles */
 .movies-container {
   display: grid;
@@ -379,6 +428,28 @@
   padding: 0 10px; /* Added padding for readability */
   font-family: 'Verdana', sans-serif;
 }
+
+/* Movies Page Heading */
+h2 {
+  text-align: center; /* Centers the text horizontally */
+  font-size: 2.5rem; /* Large font size for emphasis */
+  color: #333; /* Darker color for contrast */
+  margin: 20px 0; /* Space above and below the heading */
+  font-family: 'Arial', sans-serif; /* Clean font for readability */
+  letter-spacing: 1px; /* Slight spacing for a modern look */
+}
+
+/* Optional Background Highlight for Heading */
+h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #007bff; /* Accent color to highlight the heading */
+  margin: 10px auto 0; /* Centers the highlight bar below the text */
+  border-radius: 2px;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
